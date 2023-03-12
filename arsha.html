@@ -1,0 +1,1723 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@300;400;500;600;800&display=swap');
+
+
+    @keyframes bounce {
+        0% {
+            transform: translateY(0px);
+        }
+
+        
+        50% {
+            transform: translateY(-30px);
+        }
+
+        
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    :root {
+        --border-test: 2px solid green;
+    }
+
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        outline: none;
+        background: transparent;
+        list-style: none;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    html {
+        height: 100%;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        
+        min-height: 100%;
+        line-height: 1.4;
+        color: #222;
+        
+        font-family: 'Poppins', sans-serif;
+    }
+
+    [class*="col-"] {
+        float: left;
+        padding: 0 15px;
+    }
+
+    .container {
+        max-width: 1170px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .row {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .row::after,
+    .clearFix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    section {
+        padding: 100px 0;
+    }
+
+    
+    .text_center {
+        text-align: center;
+    }
+
+    .text.justify {
+        text-align: justify;
+    }
+
+    li,
+    i,
+    a {
+        cursor: pointer;
+    }
+
+    .grayBg {
+        background: rgb(243, 245, 250);
+    }
+
+    img {
+        width: 100%;
+    }
+
+    
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-3 {
+        width: 23%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+
+    
+
+    header {
+        z-index: 9999;
+        position: fixed;
+        width: 100%;
+        padding: 18px 0;
+        transition: 0.5s;
+    }
+
+    header.scroll {
+        background: #37517E;
+        transition: 0.5s;
+        opacity: 0.9;
+    }
+
+    .logo_part {
+        float: left;
+        padding: 6px 0;
+    }
+
+    .logo_part a {
+        padding: 0;
+        margin: 0;
+        color: #fff;
+        font-size: 28px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    nav {
+        float: right;
+    }
+
+    ul.navigation {
+        float: left;
+    }
+
+    ul.navigation>li {
+        float: left;
+        margin-left: 8px;
+    }
+
+    ul.navigation>li:hover a {
+        color: #47b2e4;
+    }
+
+    ul.navigation>li a {
+        color: #fff;
+        padding: 10px;
+        
+        float: left;
+        font-weight: bold;
+    }
+
+    ul.navigation .get_start a {
+        border-radius: 35px;
+        border: 2px solid #47b2e4;
+    }
+
+    ul.navigation .get_start:hover a {
+        background: #47b2e4;
+        color: #fff;
+        transition: 0.7s;
+    }
+
+    section.banner {
+        padding-top: 170px;
+        background: #37517E;
+        color: #fff;
+    }
+
+    .container.banner h1 {
+        font-size: 40px;
+        font-weight: 800;
+    }
+
+    .container.banner p {
+        font-size: 25px;
+        font-weight: 200;
+        opacity: 0.6;
+    }
+
+    .container.banner img {
+        animation-name: bounce;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    button {
+        margin: 40px 1px;
+        padding: 14px 20px;
+        border-radius: 22px;
+        color: #fff;
+        font-size: 17px;
+        font-weight: bold;
+        border: none;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+    .btn.start {
+        background: rgb(71, 178, 228);
+    }
+
+    .btn.start:hover {
+        background: rgb(30, 177, 245);
+    }
+
+    .btn.watch {
+        text-align: center;
+    }
+
+    .btn.watch>i {
+        font-size: 1.5em;
+    }
+
+    .btn.watch:hover i {
+        color: rgb(42, 171, 231);
+    }
+
+    section.brands .container {
+        padding: 0 50px;
+    }
+
+    section.brands {
+        padding: 20px 0;
+    }
+
+    section.brands .col-2 img {
+        padding: 0px 10px;
+        filter: grayscale(100%);
+        transition: 0.7s;
+    }
+
+    section.brands .col-2 img:hover {
+        transition: 0.7s;
+        transform: scale(1.2);
+        filter: grayscale(0%);
+    }
+
+    .brands img {
+        height: 40px;
+    }
+
+    .toggle_btn {
+        width: 40px;
+        height: 60px;
+        position: relative;
+        padding: 0;
+    }
+
+    .toggle_btn>div {
+        width: 100%;
+        height: 4px;
+        margin: 6px auto;
+        background: #fff;
+        border-radius: 2px;
+        transition: 0.5s;
+    }
+
+    .toggle_btn.open>div:nth-child(1) {
+        width: 70%;
+        position: absolute;
+        top: 12px;
+        left: -2px;
+        rotate: 27deg;
+        transition: 0.5s;
+    }
+
+    .toggle_btn.open>div:nth-child(2) {
+        top: 6px;
+        position: absolute;
+        width: 40px;
+    }
+
+    .toggle_btn.open>div:nth-child(3) {
+        width: 70%;
+        top: 1px;
+        left: -2px;
+        position: absolute;
+        rotate: -25deg;
+        transition: 0.5s;
+    }
+
+    
+    .toggle_btn {
+        cursor: pointer;
+        display: none;
+    }
+
+    .toggle_btn>i {
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+    }
+
+    .container.about>h2,
+    .container.services>h2,
+    .container.team>h2,
+    .container.pricing>h2,
+    .container.faq>h2,
+    .container.contact>h2 {
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        position: relative;
+        color: #37517e;
+    }
+
+    .container.about>h2::before,
+    .container.services>h2::before,
+    .container.team>h2::before,
+    .container.pricing>h2::before,
+    .container.faq>h2::before,
+    .container.contact>h2::before {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 1px;
+        background: #ddd;
+        bottom: 1px;
+        left: calc(50% - 60px);
+    }
+
+    .container.about>h2::after,
+    .container.services>h2::after,
+    .container.team>h2::after,
+    .container.pricing>h2::after,
+    .container.faq>h2::after,
+    .container.contact>h2::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        background: #47b2e4;
+        ;
+        bottom: 0px;
+        left: calc(50% - 20px);
+    }
+
+    .container.about>p {
+        text-align: center;
+    }
+
+    .container.about p>i {
+        color: #47b2e4;
+    }
+
+    .container.about a {
+        font-weight: 500;
+        font-size: 14px;
+        display: inline-block;
+        letter-spacing: 1px;
+        padding: 12px 32px;
+        border-radius: 4px;
+        color: #47b2e4;
+        margin-top: 6px;
+        border: 3px solid #47b2e4;
+    }
+
+    .container.about a:hover {
+        background: #47b2e4;
+        color: #fff;
+        transition: 0.7s;
+    }
+
+    
+
+    .eum img {
+        margin: 100px 0;
+        scale: 1.1;
+    }
+
+    .eum h3 {
+        font-weight: 400;
+        font-size: 34px;
+        color: rgb(55, 81, 126);
+    }
+
+    .eum p {
+        display: block;
+        text-align: justify;
+        opacity: 0.75;
+        margin: 15px 15px 15px 0;
+    }
+
+    .drop_list li {
+        cursor: pointer;
+        position: relative;
+        display: list-item;
+        margin-bottom: 20px;
+        padding: 20px;
+        background: rgb(255, 255, 255);
+        border-radius: 4px;
+    }
+
+    .drop_list li:hover a {
+        color: #47b2e4;
+    }
+
+    .drop_list li a {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        padding-right: 30px;
+        color: #000;
+    }
+
+    .eum .drop_list li a span {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 500;
+        padding-right: 10px;
+        color: #47b2e4;
+    }
+
+    .drop_list li a i {
+        cursor: pointer;
+        position: absolute;
+        font-size: 15px;
+        right: 20px;
+        top: 20px;
+        color: #000;
+    }
+
+    .drop_list li>i {
+        margin-right: 10px;
+        border-radius: 50%;
+        padding: 2px 5px;
+        border: 2px solid #47b2e4;
+        color: #47b2e4;
+    }
+
+    
+    .skills .content>p:nth-child(1) {
+        font-weight: 400;
+        font-size: 34px;
+        color: rgb(55, 81, 126);
+        margin-bottom: 10px;
+    }
+
+    .skill_bars>.bars {
+        position: relative;
+        width: 100%;
+        margin: 50px 0;
+        background: rgb(243, 245, 250);
+        height: 12px;
+    }
+
+    .skill_bars>.bars>p {
+        font-size: 14px;
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+    }
+
+    .skill_bars>.bars>span {
+        font-size: 14px;
+        position: absolute;
+        right: 0px;
+        bottom: 15px;
+    }
+
+    .skill_bars>.bars::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: #4668a2;
+    }
+
+    .skill_bars>.bars.one::before {
+        width: 100%;
+    }
+
+    .skill_bars>.bars.two::before {
+        width: 90%;
+    }
+
+    .skill_bars>.bars.three::before {
+        width: 75%;
+    }
+
+    .skill_bars>.bars.four::before {
+        width: 55%;
+    }
+
+    .container.services .col-3 {}
+
+    .container.services .content:hover {
+        transform: translateY(-15px);
+        transition: 0.7s;
+    }
+
+    .container.services .content:hover h4 {
+        color: #47b2e4;
+        transition: 0.7s;
+    }
+
+    .container.services .content {
+        padding: 40px 20px;
+        min-height: 270px;
+        margin-top: 30px;
+        transition: all ease-in-out 0.4s;
+        box-shadow: 0 0 25px rgb(0 0 0 / 10%);
+        background: #ffffff;
+        transition: 0.7s;
+    }
+
+    .container.services .content>i {
+        color: #47b2e4;
+        font-size: 35px;
+    }
+
+    .container.services .content>h4 {
+        transition: 0.7s;
+        font-size: 1.3em;
+        color: #37517e;
+    }
+
+
+    section.cta {
+        background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)), url("	https://bootstrapmade.com/demo/templates/Arsha/assets/img/cta-bg.jpg") fixed center center;
+        background-size: cover;
+    }
+
+    .container.cta h3,
+    .container.cta p {
+        font-size: 1.2em;
+        color: #fff;
+        line-height: 30px;
+    }
+
+    .container.cta h3 {
+        font-size: 1.8em;
+        padding-bottom: 15px;
+    }
+
+    .container.cta .cta_btn {
+        padding: 60px 0px;
+        text-align: center;
+        
+    }
+
+    .container.cta .cta_btn>a {
+        border: 2px solid #fff;
+        color: #fff;
+        border-radius: 35px;
+        padding: 15px 35px;
+        transition: 0.7s;
+    }
+
+    .container.cta .cta_btn>a:hover {
+        background: #47b2e4;
+        border: 2px solid #47b2e4;
+        transition: 0.7s;
+    }
+
+    section.team .row {
+        margin: 40px 0;
+    }
+
+    section.team .col-6 {
+        width: 50%;
+        padding: 30px;
+        box-shadow: 0px 2px 15px rgb(0 0 0 / 15%);
+        transition: 0.5s;
+    }
+
+    section.team .col-6:hover {
+        transform: translateY(-3%);
+        transition: 0.5s;
+    }
+
+    section.team .col-6 img {
+        border-radius: 50%;
+    }
+
+    section.team .col-6 h4 {
+        font-weight: 700;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #37517e;
+    }
+
+    section.team .col-6 span {
+        display: block;
+        font-size: 15px;
+        padding-bottom: 5px;
+        position: relative;
+        font-weight: 500;
+    }
+
+    section.team .col-6 p {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    section.team .col-6 hr {
+        margin-top: 10px;
+        width: 20%;
+    }
+
+    section.team .col-6 .socials i {
+        margin: 10px 0 5px;
+        background: #e2e7f0;
+        color: #37517E;
+        border-radius: 50%;
+        padding: 8px;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    section.team .col-6 .socials i:hover {
+        color: #fff;
+        background: #47b2e4;
+        transition: 0.5s;
+    }
+
+    .pricing .price_block {
+        position: relative;
+
+        
+        margin-top: 30px;
+        padding: 30px 20px;
+        box-shadow: 0px 2px 15px rgb(0 0 0 / 15%);
+        border-radius: 5px;
+        transition: 0.5s;
+    }
+
+    .pricing .price_block:hover {
+        transform: translateY(-3%);
+        transition: 0.5s;
+    }
+
+    .pricing .price_block:nth-child(2) a {
+        background: #47b2e4;
+        color: #fff;
+
+    }
+
+    .pricing .price_block:nth-child(2)::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #47b2e4;
+        ;
+        top: 0px;
+        left: 0;
+        border-radius: 5px;
+    }
+
+    .pricing h3 {
+        font-weight: 500;
+        margin-bottom: 15px;
+        font-size: 20px;
+        color: #37517e;
+
+    }
+
+    .pricing h4 {
+        font-size: 48px;
+        color: #37517e;
+        font-weight: 400;
+        font-family: "Jost", sans-serif;
+    }
+
+    .pricing h4 sup {
+        font-size: 28px;
+    }
+
+    .pricing span {
+        display: inline-block;
+        margin-bottom: 25px;
+        color: #47b2e4;
+    }
+
+   
+
+    .pricing ul li {
+        padding: 10px 0 10px 20px;
+        position: relative;
+    }
+
+    
+    .price_block p {
+        padding: 10px 0 10px 20px;
+
+    }
+
+    .price_block p.cut {
+        text-decoration: line-through;
+        color: #7f8f91dd;
+
+    }
+
+    .price_block p.cut i {
+        font-size: 1.2em;
+    }
+
+    .start_btn {}
+
+    .start_btn {
+        border: 2px solid #47b2e4;
+        color: #47b2e4;
+        border-radius: 35px;
+        padding: 15px 25px;
+        transition: 0.7s;
+        display: inline-block;
+    }
+
+    .start_btn:hover {
+        background: #47b2e4;
+        border: 2px solid #47b2e4;
+        color: #fff;
+        transition: 0.7s;
+    }
+
+   
+    .contact .row {
+        margin-bottom: 30px;
+    }
+
+    .contact_list {
+        float: left;
+        width: 100%;
+        position: relative;
+        padding-left: 60px;
+    }
+
+    
+    .contact_detail {
+        margin-top: 30px;
+        min-height: 600px;
+        border-top: 3px solid #47b2e4;
+        border-bottom: 3px solid #47b2e4;
+        
+        box-shadow: 0 0 25px rgb(0 0 0 / 10%);
+        padding: 30px;
+    }
+
+    .contact_detail span {
+        font-size: 1.2em;
+        margin: 5px 0;
+        color: #47b2e4;
+        border-radius: 50%;
+        background: #eefaff;
+        padding: 15px 15px;
+        position: absolute;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        
+    }
+
+    .contact .row>.col-5 h4 {
+        padding: 0;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #37517e;
+    }
+
+    .contact .row>.col-5 p {
+        padding: 0;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #6182ba;
+    }
+
+
+    .contact .col-5 img {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+
+    }
+
+    
+    .contact__form {
+        min-height: 600px;
+        margin-top: 30px;
+        
+        border-top: 3px solid #47b2e4;
+        border-bottom: 3px solid #47b2e4;
+        box-shadow: 0 0 25px rgb(0 0 0 / 10%);
+        padding: 30px;
+        float: left;
+        width: 100%;
+    }
+
+    .contact .row>.col-7>.col-6,
+    .contact .row>.col-7>.col-12 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form__group label {
+        float: left;
+        width: 100%;
+        margin-bottom: 8px;
+
+    }
+
+    .form__group input,
+    .form__group textarea {
+        float: left;
+        width: 100%;
+        resize: none;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+
+    }
+
+    .contact .start_btn {
+        text-align: center;
+    }
+
+    .contact .start_btn a {
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    
+    .newsletter h4 {
+        font-size: 24px;
+        margin: 0 0 20px 0;
+        padding: 0;
+        line-height: 1;
+        font-weight: 600;
+        color: #37517e;
+    }
+
+    .newsletter input {
+        background-color: #fff;
+        border: 0;
+        border-radius: 35px;
+        padding: 20px 8px;
+        margin-top: 35px;
+        width: 50%;
+        /* box-shadow: 0 0 25px rgb(0 0 0 / 10%); */
+        caret-color: red;
+    }
+
+    .newsletter .input {
+        position: relative;
+    }
+
+    .newsletter .start_btn {
+        top: 38%;
+        right: 25%;
+        position: absolute;
+
+    }
+
+    .newsletter .start_btn a {
+        color:#222;
+    }
+    footer .col-3 {
+        margin: 0 10px;
+        
+    }
+
+    footer h3 {
+        font-size: 28px;
+        margin: 0 0 10px 0;
+        padding: 2px 0 2px 0;
+        line-height: 1;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #37517e;
+    }
+
+    footer p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+        font-family: "Jost", sans-serif;
+        color: #5e5e5e;
+    }
+
+    footer h4 {
+        font-size: 16px;
+        font-weight: bold;
+        color: #37517e;
+        position: relative;
+        padding-bottom: 12px;
+    }
+
+    footer li {
+        padding: 10px 0;
+    }
+
+    footer li i {
+        color: #47b2e4;
+        padding-right: 10px;
+    }
+
+    footer .socials {
+        margin: 10px auto;
+    }
+
+    footer .socials i {
+        margin: 5px;
+        font-size: 1.4em;
+        background: #47b2e4;
+        color: #fff;
+        border-radius: 50%;
+        padding: 10px;
+        transition: 0.5s;
+    }
+
+    footer .socials i:hover {
+        background: #fff;
+        color: #47b2e4;
+        transition: 0.5s;
+    }
+
+    .darkfooter {
+        color: #fff;
+        height: 80px;
+        background: #37517E;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .darkfooter p {
+        margin: 50px;
+        font-size: 1.2em;
+    }
+
+    .darkfooter a {
+        color: #47b2e4;
+    }
+
+   
+    @media (max-width: 1000px) {
+        .container.services .col-3 {
+            width: 48%;
+        }
+
+        .container.footer .col-3,
+        .container.contact .col-3 {
+            margin: 1%;
+            width: 48%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .col-mb-12 {
+            width: 100%;
+        }
+
+        div.container.banner_content {
+            flex-direction: column-reverse;
+        }
+
+        div.container.banner_content>div {
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        .left_part,
+        .right_part {
+            width: 100%;
+        }
+
+        .toggle_btn {
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            top: 10%;
+            right: 6%;
+        }
+
+        ul.navigation {
+            background: #fff;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 320px;
+            transform: translateX(-320px);
+            transition: 0.5s;
+            height: 80vh;
+            z-index: 3;
+        }
+
+        ul.navigation>li {
+            margin: 20px;
+            width: 100%;
+        }
+
+        ul.navigation>li>a {
+            color: #222;
+            font-size: 1.5em;
+        }
+
+        .btn.wrapper {
+            width: 100%;
+            display: flex;
+        }
+
+        .btn.start,
+        .btn.watch {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+        }
+
+        .toggle_btn.open+ul.navigation {
+            z-index: 3;
+            transform: translateX(0px);
+            display: block;
+        }
+
+        section.banner {
+            padding-top: 100px;
+        }
+
+        section.team .col-6 {
+            margin-top: 30px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .col-mb-12 {
+            width: 100% !important;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        .container.banner .row {
+            display: flex;
+            flex-direction: column-reverse;
+            width: 100%;
+        }
+
+        .container.banner .col-6 {
+            width: 100%;
+        }
+
+        .container.brands .col-2 {
+            width: 50%;
+        }
+
+        .container.about .col-6 {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .container.services .col-3 {
+            margin-top: 1%;
+            width: 100%;
+        }
+
+        .container.services>p {
+            margin-bottom: 10px;
+        }
+
+        .container.eum .col-7,
+        .container.eum .col-5 {
+            width: 100%;
+            margin-top: 1%;
+        }
+
+        .container.skills .col-6 {
+            width: 100%;
+            margin-top: 1%;
+        }
+
+        .container.cta .col-9,
+        .container.cta .col-3 {
+            width: 100%;
+        }
+
+        section.team .col-6 {
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .pricing .col-4 {
+            margin-top: 1%;
+            width: 100%;
+        }
+
+        .container.contact .col-5,
+        .container.contact .col-7 {
+            margin-top: 2%;
+            width: 100%;
+        }
+
+        
+        .container.newsletter input {
+            width: 100%;
+        }
+
+        .newsletter .start_btn {
+            position: absolute;
+            top: 19%;
+            right: 0%;
+        }
+
+        .container.footer .col-3,
+        .container.contact .col-3 {
+            width: 100%;
+        }
+    }
+</style>
+
+<header id="myHeader">
+    <div class="container">
+        <div class="logo_part">
+            <a href="#">
+                ARSHA
+            </a>
+        </div>
+        <nav>
+            <div class="toggle_btn">
+                <div class="lines"></div>
+                <div class="lines"></div>
+                <div class="lines"></div>
+            </div>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Drop Down</a><i style="color: #fff; margin: 10px;"
+                        class="fa-solid fa-chevron-down"></i></li>
+                <li><a href="#">Contact</a></li>
+                <li class="get_start"><a href="#">Get Started</a></li>
+            </ul>
+        </nav>
+</header>
+
+<section class="banner" id="home">
+    <div class="container banner">
+        <div class="row">
+            <div class="col-6">
+                <h1 class="text center">Better Solutions For Your Business</h1>
+                <p class="text center">We are team of talented designers making websites with Bootstrap</p>
+                <div class="btn wrapper">
+                    <button class="btn start">Get Started</button>
+                    <button class="btn watch"><i class="fa-regular fa-circle-play"></i>&nbsp;Watch Video</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/hero-img.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="brands grayBg">
+    <div class="container brands">
+        <div class="row">
+            <div class="col-2">
+                <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/clients/client-1.png" alt="">
+            </div>
+            <div class="col-2">
+                <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/clients/client-2.png" alt="">
+            </div>
+            <div class="col-2">
+                <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/clients/client-3.png" alt="">
+            </div>
+            <div class="col-2">
+                <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/clients/client-4.png" alt="">
+            </div>
+            <div class="col-2">
+                <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/clients/client-5.png" alt="">
+            </div>
+            <div class="col-2">
+                <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/clients/client-6.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about">
+    <div class="container about" id="about">
+        <h2>ABOUT US</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. <br>
+                    <br> <i class="fa-sharp fa-solid fa-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat <br>
+                    <br> <i class="fa-sharp fa-solid fa-check-double"></i> Duis aute irure dolor in reprehenderit in
+                    voluptate velit <br>
+                    <br> <i class="fa-sharp fa-solid fa-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat
+                </p>
+            </div>
+            <div class="col-6">
+                <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p> <br>
+                <a>Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="eum grayBg">
+    <div class="container eum">
+        <div class="row">
+            <div class="col-7">
+                <div class="content">
+                    <h3> Eum ipsam laborum deleniti
+                        <strong>velit pariatur architecto aut nihil</strong>
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                    </p>
+                </div>
+                <div class="drop_list">
+                    <ul>
+                        <li class="dropdrown"> <a> <span>01</span> Non consectetur a nam at lectus urna duis? <i
+                                    class="fa-solid fa-chevron-down"></i></a></li>
+                        <li class="dropdrown"> <a> <span>02</span> Feugiat scelerisque varius morbi enim nunc? <i
+                                    class="fa-solid fa-chevron-down"></i></a></li>
+                        <li class="dropdrown"> <a> <span>03</span> Dolor sit amet consectetur adipiscing elit? <i
+                                    class="fa-solid fa-chevron-down"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-5">
+                <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/why-us.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills">
+    <div class="container skills">
+        <div class="row">
+            <div class="col-6">
+                <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/skills.png" alt="">
+            </div>
+            <div class="col-6">
+                <div class="content">
+                    <p>
+                        <strong>
+                            Voluptatem Dignissimos Provident quasi Corporis Voluptates
+                        </strong>
+                    </p>
+                    <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </i>
+                    <div class="skill_bars">
+                        <div class="bars one">
+                            <p>HTML</p> <span>100%</span>
+                        </div>
+
+                        <div class="bars two">
+                            <p>CSS</p> <span>90%</span>
+                        </div>
+
+                        <div class="bars three">
+                            <p>JAVASCRIPT</p> <span>75%</span>
+                        </div>
+
+                        <div class="bars four">
+                            <p>PHOTOSHOP</p> <span>55%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services grayBg" id="services">
+    <div class="container services">
+        <h2>SERVICES</h2>
+        <p class="text center">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
+            quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+            ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <div class="row">
+            <div class="col-3">
+                <div class="content">
+                    <i class="fa-solid fa-basketball"></i><br><br>
+                    <h4>Lorem Ipsum</h4><br>
+                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="content">
+                    <i class="fa-solid fa-gauge"></i><br><br>
+                    <h4>Sed ut perspici</h4><br>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="content">
+                    <i class="fa-regular fa-file"></i><br><br>
+                    <h4>Magni Dolores</h4><br>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="content">
+                    <i class="fa-sharp fa-solid fa-layer-group"></i><br><br>
+                    <h4>Nemo Enim</h4><br>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container cta">
+        <div class="row">
+            <div class="col-9 cta">
+                <h3>Call To Action</h3>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                    anim id est laborum.</p>
+            </div>
+            <div class="col-3 cta_btn"><a>Call To Action</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="team grayBg" id="team">
+    <div class="container team">
+        <h2>Team</h2>
+        <p class="text center">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
+            quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+            ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <div class="row">
+            <div class="col-6">
+                <div class="content">
+                    <div class="col-4">
+                        <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/team/team-1.jpg" alt="">
+                    </div>
+                    <div class="col-8">
+                        <h4>zxc</h4>
+                        <span>Chief Executive Officer</span>
+                        <hr>
+                        <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                        <div class="socials">
+                            <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-linkedin"></i> <i
+                                class="fa-brands fa-instagram"></i> <i class="fa-brands fa-facebook"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="content">
+                    <div class="col-4">
+                        <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/team/team-1.jpg" alt="">
+                    </div>
+                    <div class="col-8">
+                        <h4>qwerty</h4>
+                        <span>Product Manager</span>
+                        <hr>
+                        <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                        <div class="socials">
+                            <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-linkedin"></i> <i
+                                class="fa-brands fa-instagram"></i> <i class="fa-brands fa-facebook"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="content">
+                    <div class="col-4">
+                        <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/team/team-1.jpg" alt="">
+                    </div>
+                    <div class="col-8">
+                        <h4>xyz</h4>
+                        <span>Product Manager</span>
+                        <hr>
+                        <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                        <div class="socials">
+                            <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-linkedin"></i> <i
+                                class="fa-brands fa-instagram"></i> <i class="fa-brands fa-facebook"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="content">
+                    <div class="col-4">
+                        <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/team/team-1.jpg" alt="">
+                    </div>
+                    <div class="col-8">
+                        <h4>abc</h4>
+                        <span>Product Manager</span>
+                        <hr>
+                        <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                        <div class="socials">
+                            <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-linkedin"></i> <i
+                                class="fa-brands fa-instagram"></i> <i class="fa-brands fa-facebook"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="pricing">
+    <div class="container">
+        <h2>Pricing</h2>
+        <p class="text_center">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
+            quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+            ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <div class="row">
+            <div class="col-4 col-mb-12">
+                <div class="price_block">
+                    <h3>Free Plans</h3>
+                    <h4><sup>$</sup>0</h4>
+                    <span>per month</span>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet.</li>
+                        <li><i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet.</li>
+                        <li><i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet.</li>
+                    </ul>
+                    <p class="cut"> <i class="fa-solid fa-xmark"></i> Only 50 tickets left!</p>
+                    <p class="cut"> <i class="fa-solid fa-xmark"></i> Only 50 tickets left!</p>
+                    <div class="start_btn">
+                        <a>Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-mb-12">
+                <div class="price_block">
+                    <h3>Business Plans</h3>
+                    <h4><sup>$</sup>15</h4>
+                    <span>per month</span>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet.</li>
+                        <li><i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet.</li>
+                        <li><i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet.</li>
+                    </ul>
+                    <p><i class="fa-solid fa-check"></i> Only 50 tickets left!</p>
+                    <p class="cut"><i class="fa-solid fa-xmark"></i> Only 50 tickets left!</p>
+                    <div class="start_btn">
+                        <a>Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-mb-12">
+                <div class="price_block">
+                    <h3>Developer Plans</h3>
+                    <h4><sup>$</sup>26</h4>
+                    <span>per month</span>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet.</li>
+                        <li><i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet.</li>
+                        <li><i class="fa-solid fa-check"></i> Lorem ipsum dolor sit amet.</li>
+                    </ul>
+                    <p><i class="fa-solid fa-check"></i> Only 50 tickets left!</p>
+                    <p><i class="fa-solid fa-check"></i> Only 50 tickets left!</p>
+                    <div class="start_btn">
+                        <a>Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq grayBg">
+    <div class="container faq">
+        <h2>FREQUENTLY ASKED QUESTIONS</h2>
+        <p class="text center">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
+            quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+            ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <div class="row">
+            <div class="col-12">
+                <div class="drop_list">
+                    <ul>
+                        <li class="dropdrown"> <i class="fa-solid fa-question"></i> <a>Non Lorem ipsum dolor sit
+                                amet.consectetur a nam at lectus urna duis? <i class="fa-solid fa-chevron-down"></i></a>
+                        </li>
+                        <li class="dropdrown"> <i class="fa-solid fa-question"></i> <a>Feugiat scelerisque varius Lorem
+                                ipsum dolor sit amet consectetur.morbi enim nunc? <i
+                                    class="fa-solid fa-chevron-down"></i></a></li>
+                        <li class="dropdrown"> <i class="fa-solid fa-question"></i> <a>Dolor sit amet consectetur Lorem
+                                ipsum dolor, sit amet consectetur adipisicing. adipiscing elit? <i
+                                    class="fa-solid fa-chevron-down"></i></a></li>
+                        <li class="dropdrown"> <i class="fa-solid fa-question"></i> <a>Feugiat scelerisque Lorem ipsum
+                                dolor sit. varius morbi enim nunc? <i class="fa-solid fa-chevron-down"></i></a></li>
+                        <li class="dropdrown"> <i class="fa-solid fa-question"></i> <a>Dolor sit amet consectetur Lorem,
+                                ipsum dolor.adipiscing elit? <i class="fa-solid fa-chevron-down"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container contact">
+        <h2>CONTACT</h2>
+        <p class="text_center">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
+            quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+            ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <div class="row">
+            <div class="col-5 col-mb-12">
+                <div class="contact_detail">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="contact_list">
+                                <span><i class="fa-solid fa-location-crosshairs"></i></span>
+                                <h4>Location:</h4>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+                            <div class="contact_list">
+                                <span><i class="fa-solid fa-location-crosshairs"></i></span>
+                                <h4>Email:</h4>
+                                <p> msdvnidi2@emfoe.com </p>
+                            </div>
+                            <div class="contact_list">
+                                <span><i class="fa-solid fa-location-crosshairs"></i></span>
+                                <h4>Call:</h4>
+                                <p> +91 8989892626</p>
+                            </div>
+                        </div>
+                        <!-- <div class="col-12">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9062.504604013548!2d75.69992633429678!3d31.244376694600028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1676864904651!5m2!1sen!2sin"
+                                width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-7 col-mb-12">
+                <form action="" class="contact__form">
+                    <div class="row">
+                        <div class="form__group col-6 col-mb-12">
+                            <label for="">Your Name</label>
+                            <input type="text">
+                        </div>
+                        <div class="form__group col-6 col-mb-12">
+                            <label for="">Your Email</label>
+                            <input type="email">
+                        </div>
+                        <div class="form__group col-12 col-mb-12">
+                            <label for="">Subject</label>
+                            <input type="text">
+                        </div>
+                        <div class="form__group col-12 col-mb-12">
+                            <label for="">Message</label>
+                            <textarea rows="10"></textarea>
+                        </div>
+                        <div class=" form__group col-12 text_center">
+                            <a href="" class="start_btn">Send Message</a>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="newsletter grayBg">
+    <div class="container newsletter">
+        <div class="row">
+            <div class="col-12 text_center">
+                <h4>Join Our Newsletter</h4>
+                <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                <div class="input">
+                    <input type="email">
+                    <div class="start_btn"><a>Subscribe</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="footer">
+    <footer>
+        <div class="container footer">
+            <div class="row">
+                <div class="col-3">
+                    <h3>agent</h3>
+                    <p>A108 Adam Street <br>
+                        New York, NY 535022 <br>
+                        United States
+                    </p>
+                    <br> <br>
+                    <strong>Phone:</strong> +1 5589 55488 55 <br>
+                    <strong>Email:</strong>info@example.com</p>
+                </div>
+                <div class="col-3">
+                    <h4>Useful Link</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-chevron-right"></i>Home</li>
+                        <li><i class="fa-solid fa-chevron-right"></i>About us</li>
+                        <li><i class="fa-solid fa-chevron-right"></i>Services</li>
+                        <li><i class="fa-solid fa-chevron-right"></i>Terms Of Services</li>
+                        <li><i class="fa-solid fa-chevron-right"></i>Privacy Policy</li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-chevron-right"></i>Web Design</li>
+                        <li><i class="fa-solid fa-chevron-right"></i>Web Development</li>
+                        <li><i class="fa-solid fa-chevron-right"></i>Services</li>
+                        <li><i class="fa-solid fa-chevron-right"></i>Product Management</li>
+                        <li><i class="fa-solid fa-chevron-right"></i>Marketing</li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h4>Our Social Networks</h4>
+                    <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p> <br>
+                    <div class="socials">
+                        <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-linkedin"></i> <i
+                            class="fa-brands fa-instagram"></i> <i class="fa-brands fa-facebook"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+
+<div class="darkfooter">
+    <p>© Copyright Arsha. All Rights Reserved</p>
+    <p>Designed by <a>BootstrapMade</a></p>
+</div>
+
+<script src="https://kit.fontawesome.com/1b108122f2.js" crossorigin="anonymous"></script>
+<script>
+    let burger = document.getElementsByClassName("toggle_btn")
+    burger[0].addEventListener("click", () => {
+        burger[0].classList.toggle("open");
+        // console.log(burger[0].=)
+    })
+
+
+    let header = document.getElementById("myHeader")
+
+    window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 50) {
+            header.classList.add("scroll");
+        } else {
+            header.classList.remove("scroll");
+        }
+    });
+    let lidrop = document.getElementsByClassName("dropdown")
+    lidrop.addEventListener("click", () => {
+        let p = document.createElement("p");
+        const newContent = document.createTextNode("Hi there and greetings!");
+        p.appendChild(newContent);
+        lidrop.appendChild(p)
+    })
+
+</script>
